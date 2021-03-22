@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      <ion-icon name="person-circle-outline"> </ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <img src="../assets/img/landingImg.png">
+
+    <strong>
+      <h1>WELCOME</h1>
+    </strong>
+
+    <ion-item>
+      <ion-label position="fixed">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+
+    </ion-item>
+    <br>
+
+
+    <ion-item>
+      <ion-label position="fixed">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+
+    <ion-button  color="dark" expand="block" (click)=onLogin()>Login</ion-button>
+    <br>
+
+
+
+
+  </div>
+</ion-content>

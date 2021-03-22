@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "landingionicclase1": {
+      "hosting": {
+        "app": [
+          "landingionicclase1"
+        ]
+      }
+    }
+  }
+}
