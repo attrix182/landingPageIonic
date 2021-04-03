@@ -14,8 +14,14 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
 
   user: User = new User();
+  
 
-  constructor(private router: Router, private authSvc: AuthService, public alertCtrl: AlertController) { }
+  constructor(private router: Router, private authSvc: AuthService, public alertCtrl: AlertController) {
+
+    this.user.email = '';
+    this.user.password = '';
+    
+   }
 
   ngOnInit() { }
 
@@ -33,13 +39,29 @@ export class HomePage {
 
   async onLogin() {
 
+    document.getElementById('msjError').textContent = ''
+
+
     const user = await this.authSvc.onLogin(this.user)
     if (user) {
       console.log('Logueado!!');
       this.router.navigateByUrl('/principal');
     }
     else {
-      this.presentAlert()
+
+      if (!(this.user.email == '' || this.user.password == '')) {
+        document.getElementById('msjError').style.animation = 'none';
+        document.getElementById('msjError').offsetHeight;
+        document.getElementById('msjError').style.animation = null;
+        document.getElementById('msjError').textContent = 'USER NOT FOUND '
+      }
+      else if(this.user.email == '' || this.user.password == '') {
+        document.getElementById('msjError').style.animation = 'none';
+        document.getElementById('msjError').offsetHeight;
+        document.getElementById('msjError').style.animation = null;
+        document.getElementById('msjError').textContent = 'EMPTY FIELDS'
+      }
+      
     }
 
   }

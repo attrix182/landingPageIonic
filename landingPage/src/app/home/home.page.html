@@ -34,9 +34,14 @@
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
     <br>
+
+    <div id="errorLogin">
+      <h6 id="msjError"></h6>
+    </div>
+
     <br>
 
-    <ion-button  color="dark" expand="block" (click)=onLogin()>Login</ion-button>
+    <ion-button color="dark" expand="block" (click)=onLogin()>Login</ion-button>
     <br>
 
 
@@ -44,3 +49,10 @@
 
   </div>
 </ion-content>
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
